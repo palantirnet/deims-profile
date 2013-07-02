@@ -74,7 +74,9 @@
 
     <?php if (!empty($content['field_maintenance'])): ?>
     <maintenance>
-      <?php print render($content['field_maintenance']); ?>
+      <description>
+         <?php print render($content['field_maintenance']); ?>
+      </description>
     </maintenance>
     <?php endif; ?>
 
