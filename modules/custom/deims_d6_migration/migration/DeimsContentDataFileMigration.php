@@ -105,7 +105,7 @@ class DeimsContentDataFileMigration extends DrupalNode6Migration {
     // Convert code definitions from '=' to '|' as the key/value separator
     $code_parts = explode('=', $code);
     // Remove any surrounding whitespace from the key or value.
-    $code_parts = array_walk($code_parts, 'trim');
+    $code_parts_flag = array_walk($code_parts, 'trim');
     return implode('|', $code_parts);
   }
 
