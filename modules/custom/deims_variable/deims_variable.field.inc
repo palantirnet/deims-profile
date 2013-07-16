@@ -202,24 +202,24 @@ function deims_variable_field_widget_form(&$form, &$form_state, $field, $instanc
     '#type' => 'value',
     '#value' => isset($items[$delta]['id']) ? $items[$delta]['id'] : NULL,
   );
-  $element['label'] = array(
+  $element['name'] = array(
     '#prefix' => '<div class="variable-left-column form-wrapper">',
     '#type' => 'textfield',
-    '#title' => t('Label'),
+    '#title' => t('Name'),
     '#description' => t('The label of the actual column in the source file.'),
-    '#default_value' => isset($items[$delta]['label']) ? $items[$delta]['label'] : '',
+    '#default_value' => isset($items[$delta]['name']) ? $items[$delta]['name'] : '',
     '#required' => $instance['required'],
     '#maxlength' => 255,
     '#size' => 30,
-    '#attributes' => array('class' => array('variable-label')),
-  );
-  $element['name'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Name'),
-    '#description' => t('The human-readable name of the variable.'),
-    '#default_value' => isset($items[$delta]['name']) ? $items[$delta]['name'] : '',
-    '#maxlength' => 255,
     '#attributes' => array('class' => array('variable-name')),
+  );
+  $element['label'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Label'),
+    '#description' => t('The human-readable name of the variable.'),
+    '#default_value' => isset($items[$delta]['label']) ? $items[$delta]['label'] : '',
+    '#maxlength' => 255,
+    '#attributes' => array('class' => array('variable-label')),
   );
   $element['definition'] = array(
     '#type' => 'textarea',
@@ -448,7 +448,7 @@ function deims_variable_remove_submit($form, &$form_state) {
 
   // Go one level up in the form, to the widgets container.
   $parent_element = drupal_array_get_nested_value($form, $address);
-  $field_name = $parent_element['#field_name'];
+  $field_name = $parent_element['#field_name'];  //label x name not swapped
   $langcode = $parent_element['#language'];
   $parents = $parent_element['#field_parents'];
 

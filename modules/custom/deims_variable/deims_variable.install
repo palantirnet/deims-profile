@@ -11,13 +11,13 @@
 function deims_variable_field_schema($field) {
   $schema = array();
 
-  $schema['columns']['label'] = array(
+  $schema['columns']['name'] = array(
     'description' => 'The label of the source column of this variable (the CSV header value).',
     'type' => 'varchar',
     'length' => 80,
     'not null' => FALSE,
   );
-  $schema['columns']['name'] = array(
+  $schema['columns']['label'] = array(
     'description' => 'The human-readable name of the variable.',
     'type' => 'varchar',
     'length' => 255,
