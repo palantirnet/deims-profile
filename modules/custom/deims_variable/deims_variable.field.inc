@@ -448,7 +448,7 @@ function deims_variable_remove_submit($form, &$form_state) {
 
   // Go one level up in the form, to the widgets container.
   $parent_element = drupal_array_get_nested_value($form, $address);
-  $field_name = $parent_element['#field_name'];  //label x name not swapped
+  $field_name = $parent_element['#field_name'];  
   $langcode = $parent_element['#language'];
   $parents = $parent_element['#field_parents'];
 
