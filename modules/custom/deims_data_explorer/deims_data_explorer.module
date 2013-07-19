@@ -259,14 +259,14 @@ function deims_data_explorer_form($form, &$form_state, $variables, $connection, 
   );
 
   $header  = array(
-    'label' => t('Name'),
-    'name' => t('Variable Label'),
+    'label' => t('Variable Label'),
+    'name' => t('Name'),
     'type' => t('Variable Type'),
     'definition' => t('Definition'),
   );
   $options = array();
   foreach ($allowed_column_variables as $variable) {
-    $options[$variable['name']] = array(
+    $options[$variable['label']] = array(
       'label' => $variable['label'],
       'name' => $variable['name'],
       'type' => $variable['type'],
@@ -294,8 +294,8 @@ function deims_data_explorer_form($form, &$form_state, $variables, $connection, 
   );
   $options = array();
   foreach ($allowed_filters_variables as $variable) {
-    $options[$variable['name']] = array(
-      'label' => $variable['label'],
+    $options[$variable['label']] = array(
+      'name' => $variable['name'],
       'choice' => 'Choice',
     );
   }
