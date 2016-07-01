@@ -146,6 +146,7 @@ projects[flexslider][subdir] = "contrib"
 
 projects[geofield][version] = "1.2"
 projects[geofield][subdir] = "contrib"
+projects[geofield][patch][] = http://www.drupal.org/files/geofield-sql-field-type-numeric-1456180-13.patch
 
 projects[geophp][version] = "1.7"
 projects[geophp][subdir] = "contrib"
@@ -160,7 +161,7 @@ projects[inline_entity_form][version] = "1.x-dev"
 projects[inline_entity_form][subdir] = "contrib"
 ; Limit 'Add new' bundle options when entityreference uses a view for selection
 ; @see https://drupal.org/node/1872316
-https://www.drupal.org/files/issues/1872316-ief-bundle-selection-erv-22_0.patch
+projects[inline_entity_form][patch][] = https://www.drupal.org/files/issues/1872316-ief-bundle-selection-erv-22_0.patch
 
 projects[libraries][version] = "2.2"
 projects[libraries][subdir] = "contrib"
