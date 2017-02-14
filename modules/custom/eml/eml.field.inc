@@ -243,6 +243,9 @@ function eml_field_formatter_view($entity_type, $entity, $field, $instance, $lan
         if (!empty($item['locality'])) {
           $address['city'] = $item['locality'];
         }
+        if (!empty($item['premise'])) {
+          $address['deliveryPoint'] = $address['deliveryPoint'].", ".$item['premise'];  
+        }
         if (!empty($item['administrative_area'])) {
           $address['administrativeArea'] = $item['administrative_area'];
         }
